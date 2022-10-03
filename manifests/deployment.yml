@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mesoaks-9cf6"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mesoaks-9cf6"
+  template:
+    metadata:
+      labels:
+        app: "mesoaks-9cf6"
+    spec:
+      containers:
+        - name: "mesoaks-9cf6"
+          image: "mesoacr.azurecr.io/mesoaks"
+          ports:
+          - containerPort: 80
